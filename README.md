@@ -1,6 +1,6 @@
 # Ибрагим Курайши — сайт-резюме
 
-Одностраничный сайт-резюме: Performance Manager · Mobile Buyer.
+Одностраничный сайт-резюме: Project Buyer (performance-маркетинг).
 Собран по дизайн-макету (handoff): тёплый молочный фон `#f2f0ea`, чернила `#141414`,
 рамки 1.5px, шрифты Oswald / JetBrains Mono / Manrope.
 Чистый HTML/CSS/JS без сборки — открывается напрямую, хостится на GitHub Pages или Vercel.
