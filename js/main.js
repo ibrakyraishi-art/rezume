@@ -114,27 +114,11 @@
       if (el.classList.contains('count')) countUp(el);
       const title = el.querySelector('[data-scramble]');
       if (title) scramble(title);
-      if (el.id === 'dash-line' || el.querySelector('#dash-line')) {
-        document.getElementById('dash-line').classList.add('draw');
-      }
       io.unobserve(el);
     });
   }, { threshold: 0.2 });
 
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-
-  /* ---------- LIVE KPI (лёгкая пульсация цифр) ---------- */
-  function jitter(id, base, spread, suffixInt) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    setInterval(() => {
-      const v = base + Math.round((Math.random() - 0.5) * spread);
-      el.textContent = suffixInt ? v : v;
-    }, 2200 + Math.random() * 800);
-  }
-  jitter('kpi-roas', 142, 10, true);
-  jitter('kpi-cpa', 318, 24, true);
-  jitter('kpi-fraud', 96, 3, true);
 
   /* ---------- HALFTONE-ФОТО ---------- */
   const canvas = document.getElementById('halftone');
