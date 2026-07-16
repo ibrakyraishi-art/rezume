@@ -279,9 +279,10 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* фото */
+.tri__col--photo { display: flex; flex-direction: column; }
 .photo {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4;
   border: var(--line);
   overflow: hidden;
   background: var(--paper);
@@ -290,8 +291,13 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 28%;
   display: block;
   filter: grayscale(1) contrast(1.06);
+}
+@media (min-width: 901px) {
+  /* фото растягивается на всю высоту колонки — вровень с соседними */
+  .photo { flex: 1 1 auto; aspect-ratio: auto; min-height: 320px; }
 }
 .photo__fallback[hidden] { display: none; }
 .photo__fallback {
