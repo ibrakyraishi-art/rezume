@@ -7,6 +7,12 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- ХЕДЕР: снять обрезку строк после анимации букв ---------- */
+  var heroName = document.querySelector('.hero__name');
+  if (heroName) {
+    setTimeout(function () { heroName.classList.add('settled'); }, reduceMotion ? 0 : 2400);
+  }
+
   /* ---------- ТОЧКИ НАВЫКОВ ---------- */
   document.querySelectorAll('.dots').forEach(function (el) {
     var level = parseInt(el.getAttribute('data-level'), 10) || 0;
